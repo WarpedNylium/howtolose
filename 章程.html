@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How to Lose 委員會組織章程">
+    <meta property="og:image" content="path/to/your/image.png">
+    <title>How to Lose 委員會 - 組織章程</title>
+    <link rel="icon" href="path/to/your/favicon.png" type="image/png">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="path/to/your/custom.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.6;
+        }
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            background-color: #2c3e50;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .search-bar {
+            width: 80%;
+            margin: 20px 0;
+        }
+        .search-bar input {
+            width: calc(100% - 100px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+        .search-bar button {
+            width: 100px;
+            padding: 10px;
+            border: 1px solid #2c3e50;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        .search-bar button:hover {
+            background-color: #1a252f;
+        }
+        section {
+            width: 80%;
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 0;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        p, li {
+            font-size: 1em;
+            color: #555;
+            margin: 10px 0;
+        }
+        ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+        .signature-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin-top: 40px;
+        }
+        .signature-section {
+            text-align: center;
+            width: 45%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .signature-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .signature-section h2 {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 0;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        .signature-section p {
+            font-size: 1.1em;
+            color: #555;
+            margin: 10px 0;
+        }
+        .signature-section img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#searchForm').on('submit', function(e) {
+                e.preventDefault();
+                var query = $('#searchInput').val().toLowerCase();
+                $('section').each(function() {
+                    var sectionText = $(this).text().toLowerCase();
+                    if (sectionText.includes(query)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>How to Lose 委員會組織章程</h1>
+    </header>
+    <div class="search-bar">
+        <form id="searchForm" class="form-inline">
+            <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+    <section>
+        <h2>第一條 基本資訊</h2>
+        <p>本委員會為How to Lose委員會</p>
+    </section>
+    <section>
+        <h2>第二條 委員</h2>
+        <p>本章程所指之委員以委員名冊為準。黨員名冊以群組成員為準。</p>
+    </section>
+    <section>
+        <h2>第三條 爭議裁決委員會</h2>
+        <ul>
+            <li>一、設立爭議裁決委員會，許委員為當然委員，審理爭議事項。當然委員因故不能視事時，由其餘三人一同充任之</li>
+            <li>二、有下列以下情勢，當然委員應自行迴避：
+                <ul>
+                    <li>1.當然委員為嫌疑者</li>
+                </ul>
+            </li>
+            <li>三、有違反How to lose 組織精神之言論，均得提交爭議裁決委員會審理</li>
+            <li>四、經爭議裁決委員會全數委員同意有罪，有罪判決始成立</li>
+        </ul>
+    </section>
+    <section>
+        <h2>第四條 罰鍰管理委員會</h2>
+        <ul>
+            <li>一、設立罰鍰管理委員會，洪委員為當然委員，綜理罰鍰之處分，然應符合組織利益</li>
+            <li>二、犯本章程者，未經爭議裁決委員會之有罪判決確定，不得裁罰</li>
+        </ul>
+    </section>
+    <section>
+        <h2>第五條 禁止事項</h2>
+        <ul>
+            <li>一、不得故意抬舉本委員會會之成員或自我貶抑，違者處10元罰鍰，得按次罰鍰</li>
+            <li>二、不得惡意發佈包含「⚡️」字樣之訊息或包含「電」、「卷」字樣之訊息，違者處10元罰鍰，得按次罰鍰</li>
+            <li>三、不得惡意發佈包含連續二以上「⚡️」字樣之訊息或以「🛐」字樣接續前項之字樣，違者處30元罰鍰，得按次罰鍰</li>
+        </ul>
+    </section>
+    <div class="signature-container">
+        <section class="signature-section">
+            <h2>爭議裁決委員會</h2>
+            <p>許當然委員</p>
+            <img src="image.png" alt="Signature of 許當然委員">
+        </section>
+        <section class="signature-section">
+            <h2>爭議裁決委員會</h2>
+            <p>許當然委員</p>
+            <img src="image2.png" alt="Signature of 許當然委員">
+        </section>
+    </div>
+</body>
+</html>
