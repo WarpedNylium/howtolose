@@ -27,34 +27,58 @@
             background-color: #2c3e50;
             color: white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
         h1 {
             font-size: 2.5em;
             margin: 0;
         }
+        .top-bar {
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
         .search-bar {
             width: 80%;
             margin: 20px 0;
+            display: flex;
+            algin-items: center;
+        }
+        .search-bar .input-group {
+            flex-grow: 1;
         }
         .search-bar input {
-            width: calc(100% - 100px);
-            padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px 0 0 4px;
             outline: none;
         }
-        .search-bar button {
-            width: 100px;
-            padding: 10px;
+        .search-bar .input-group-append .btn {
             border: 1px solid #2c3e50;
             background-color: #2c3e50;
             color: white;
             border-radius: 0 4px 4px 0;
             cursor: pointer;
         }
-        .search-bar button:hover {
+        .search-bar .input-group-append .btn:hover {
             background-color: #1a252f;
         }
+        .english-mode {
+            margin-left: 10px;
+        }
+        .english-mode button {
+            border: 1px solid #2c3e50;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+        .english-mode button:hover {
+            background-color: #1a252f;
+        }
+        
         section {
             width: 80%;
             background-color: #fff;
@@ -132,8 +156,17 @@
                     } else {
                         $(this).hide();
                     }
+
                 });
             });
+            $('#translateButton').on('click', function() {
+                $('.zh').toggle();
+                $('.en').toggle();
+            });
+
+            // Initially hide English content
+            $('.en').hide();
+
         });
     </script>
 </head>
@@ -143,21 +176,48 @@
     </header>
     <div class="search-bar">
         <form id="searchForm" class="form-inline">
-            <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <div class="input-group">
+                <input id="searchInput" class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </div>
+            </div>
         </form>
+        <div class="english-mode">
+            <button id="translateButton">EN</button>
+        </div>
     </div>
     <section>
-        <h2>第一條 基本資訊</h2>
-        <p>本委員會為How to Lose委員會</p>
+        <h2 class="zh">第一條 基本資訊</h2>
+        <h2 class="en">Article 1: Basic Information</h2>
+        <ul class="zh">
+            <li>一、本委員會為How to Lose委員會 </li>
+            <li>二、在本章程之範圍內：
+                <ul>
+                    <li>1.被告係指遭舉發而待爭議裁決委員會審理之人</li>
+                    <li>2.「字樣」係指任何文字或其組合、句子、或其他圖畫、聲音、影像</li>
+                </ul>
+                
+        </ul>
+        <ul class="en">
+            <li>1.This committee shall be the How to Lose Committee</li>
+            <li>2.In this charter--
+                <ul>
+                    <li>(1) "defendant" means a person who has informed against and awaiting decisions by the Dispute Resolution Committee</li>
+                    <li> (2) "characters" means any words, or their combinations, or sentences, or graphical or audio contents</li>
+            </li>
+        </ul>
     </section>
     <section>
-        <h2>第二條 委員</h2>
-        <p>本章程所指之委員以委員名冊為準。黨員名冊以群組成員為準。</p>
+        <h2 class="zh">第二條 委員</h2>
+        <h2 class="en">Article 2: Members</h2>
+        <p class="zh">本章程所指之委員以委員名冊為準。委員名冊以群組成員為準。</p>
+        <p class="en">The members referred to in this charter are based on the member list. The member list is based on the group members.</p>
     </section>
     <section>
-        <h2>第三條 爭議裁決委員會</h2>
-        <ul>
+        <h2 class="zh">第三條 爭議裁決委員會</h2>
+        <h2 class="en">Article 3: Dispute Resolution Committee</h2>
+        <ul class="zh">
             <li>一、設立爭議裁決委員會，許委員為當然委員，審理爭議事項。當然委員因故不能視事時，由其餘三人一同充任之</li>
             <li>二、有下列以下情勢，當然委員應自行迴避：
                 <ul>
@@ -167,31 +227,57 @@
             <li>三、有違反How to lose 組織精神之言論，均得提交爭議裁決委員會審理</li>
             <li>四、經爭議裁決委員會全數委員同意有罪，有罪判決始成立</li>
         </ul>
-    </section>
-    <section>
-        <h2>第四條 罰鍰管理委員會</h2>
-        <ul>
-            <li>一、設立罰鍰管理委員會，洪委員為當然委員，綜理罰鍰之處分，然應符合組織利益</li>
-            <li>二、犯本章程者，未經爭議裁決委員會之有罪判決確定，不得裁罰</li>
+        <ul class="en">
+            <li>1. There shall be a Dispute Resolution Committee, with Commissioner Xu as the ex officio member, to handle disputes. If the ex officio member is unable to serve, the remaining three members shall serve together.</li>
+            <li>2. In the following situations, the ex officio member shall find themselves recused:
+                <ul>
+                    <li>1. The ex officio member is a suspect</li>
+                </ul>
+            </li>
+            <li>3. Any speech that violates the spirit of the How to Lose organization may be submitted to the Dispute Resolution Committee for review.</li>
+            <li>4. A guilty verdict is established only with the unanimous consent of all members of the Dispute Resolution Committee.</li>
         </ul>
     </section>
     <section>
-        <h2>第五條 禁止事項</h2>
-        <ul>
+        <h2 class="zh">第四條 罰鍰管理委員會</h2>
+        <h2 class="en">Article 4: Fine Management Committee</h2>
+        <ul class="zh">
+            <li>一、設立罰鍰管理委員會，洪委員為當然委員，綜理罰鍰之處分，然應符合組織利益</li>
+            <li>二、犯本章程者，未經爭議裁決委員會之有罪判決確定，不得裁罰</li>
+        </ul>
+        <ul class="en">
+            <li>1. There shall be a body of committeeman , with Commissioner Hong as the ex officio member, to handle fines, and all punitive fines shall be in the interest of this committee.</li>
+            <li>2. Those who violate this charter shall not be fined without a guilty verdict confirmed by the Dispute Resolution Committee.</li>
+        </ul>
+    </section>
+    <section>
+        <h2 class="zh">第五條 禁止事項</h2>
+        <h2 class="en">Article 5: Prohibited Actions</h2>
+
+        <ul class="zh">
             <li>一、不得故意抬舉本委員會會之成員或自我貶抑，違者處10元罰鍰，得按次罰鍰</li>
             <li>二、不得惡意發佈包含「⚡️」字樣之訊息或包含「電」、「卷」字樣之訊息，違者處10元罰鍰，得按次罰鍰</li>
             <li>三、不得惡意發佈包含連續二以上「⚡️」字樣之訊息或以「🛐」字樣接續前項之字樣，違者處30元罰鍰，得按次罰鍰</li>
         </ul>
+        <ul class="en">
+            <li>1. Members of this committee shall not intentionally praise the members of this committee or belittle themselves, and violators shall be subject to a punitive fine of 10 dollars, which may be fined per violation.</li>
+            <li>2. Malicious messages containing the word "⚡️" or messages containing the words "電" or "卷" is prohibited, and violators shall be fined 10 dollars, which may be fined per violation.</li>
+            <li>3. Malicious messages containing two or more consecutive "⚡️" characters or following the previous characters with one or more "🛐" characters  is prohibited, and violators shall be fined 30 dollars, which may be fined per violation.</li>
+        </ul>
     </section>
     <div class="signature-container">
         <section class="signature-section">
-            <h2>爭議裁決委員會</h2>
-            <p>許當然委員</p>
+            <h2 class="zh">爭議裁決委員會</h2>
+            <h2 class="en"> Dispute Resolution Committee</h2>
+            <p class="zh">許當然委員</p>
+            <p class="en">  <i>ex officio</i> Commissioner Hsu</p>
             <img src="image.png" alt="Signature of 許當然委員">
         </section>
         <section class="signature-section">
-            <h2>爭議裁決委員會</h2>
-            <p>許當然委員</p>
+            <h2 class="zh">罰鍰管理委員會</h2>
+            <h2 class="en"> Committee for Fine Management</h2>
+            <p class="zh">許當然委員</p>
+            <p class="en"> <i>ex officio<i> Commissioner Hong </p>
             <img src="image2.png" alt="Signature of 許當然委員">
         </section>
     </div>
