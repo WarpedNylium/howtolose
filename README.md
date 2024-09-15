@@ -1,4 +1,4 @@
-#How to lose 組織章程！
+# How to lose 組織章程！
 
 ## 功能
 - 優美的介面
