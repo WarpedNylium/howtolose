@@ -33,6 +33,24 @@
             font-size: 2.5em;
             margin: 0;
         }
+        .top-right-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .top-right-buttons button {
+            border: 1px solid #2c3e50;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+        .top-right-buttons button:hover {
+            background-color: #1a252f;
+        }
         .top-bar {
             width: 80%;
             display: flex;
@@ -141,6 +159,24 @@
             border: 1px solid #ddd;
             border-radius: 4px;
         }
+        .dark-mode {
+            background-color: #333;
+            color: white;
+        }
+        .dark-mode header {
+            background-color: #1a252f;
+        }
+        .dark-mode section {
+            background-color: #444;
+            color: white;
+        }
+        .dark-mode h2 {
+            color: #ddd;
+            border-bottom-color: #444;
+        }
+        .dark-mode p, .dark-mode li {
+            color: #ccc;
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -163,6 +199,9 @@
                 $('.zh').toggle();
                 $('.en').toggle();
             });
+            $('#darkModeButton').on('click', function() {
+                $('body').toggleClass('dark-mode');
+            });
 
             // Initially hide English content
             $('.en').hide();
@@ -173,6 +212,10 @@
 <body>
     <header>
         <h1>How to Lose 委員會組織章程</h1>
+        <div class="top-right-buttons">
+            <button id ="translateButton">En</button>
+            <button id = "darkModeButton">Drk Md</button>
+        </div>
     </header>
     <div class="search-bar">
         <form id="searchForm" class="form-inline">
@@ -183,9 +226,6 @@
                 </div>
             </div>
         </form>
-        <div class="english-mode">
-            <button id="translateButton">EN</button>
-        </div>
     </div>
     <section>
         <h2 class="zh">第一條 基本資訊</h2>
