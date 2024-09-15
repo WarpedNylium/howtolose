@@ -21,6 +21,38 @@
             line-height: 1.6;
             align-items: center;
         }
+        .container {
+            display: flex;
+            width: 100%;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: #2c3e50;
+            color: white;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 8px 16px;
+            text-align: left;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        .sidebar ul li a:hover {
+            background-color: #575757;
+        }
         header {
             width: 100%;
             text-align: center;
@@ -240,9 +272,14 @@
         <div class="top-right-buttons">
             <button id ="translateButton">En</button>
             <button id = "darkModeButton">Drk Md</button>
+            <button id="sidebarToggle">☰</button>
         </div>
     </header>
-
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <button id="charterButton" class="sidebar-button">The Charter</button>
+            <button id="historyButton" class="sidebar-button">History of Amendments</button>
+    </div>
     <div class="search-bar">
         <form id="searchForm" class="form-inline">
             <div class="input-group">
